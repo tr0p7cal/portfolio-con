@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constantin Eichhorn</title>
+
+    <!-- Ersetze "path/to/your/icon.png" mit dem Pfad zu deinem Icon -->
+    <link rel="icon" type="image/png" href="bilder/icon2.png">
+
+    <!-- Verknüpfung zur externen CSS-Datei -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ======================= HEADER ======================= -->
+    <header id="main-header">
+        <div class="container" id="header-content">
+            <div id="logo-container">
+                <!-- Das ist das sichtbare Logo auf der Seite. Es bleibt hier. -->
+                <img id="logo-img" src="bilder/icon2.png" alt="Logo">
+                <h1 id="site-title">Constantin Eichhorn</h1>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#cv-section">Lebenslauf</a></li>
+                    <li><a href="#projects-section">Projekte</a></li>
+                    <li><a href="#contact-section">Kontakt</a></li>
+                </ul>
+            </nav>
+            
+            <button id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+        </div>
+    </header>
+
+    <!-- ======================= MAIN CONTENT ======================= -->
+    <main>
+
+        <!-- --- HELDEN-BEREICH --- -->
+        <section id="hero">
+            <div class="hero-buttons-container">
+                <a href="#cv-section" class="hero-button">Lebenslauf</a>
+                <a href="#projects-section" class="hero-button">Projekte</a>
+                <a href="#contact-section" class="hero-button">Kontakt</a>
+            </div>
+        </section>
+
+        <!-- --- LEBENSLAUF-BEREICH --- -->
+
+ <section id="cv-section">
+    <div class="container">
+        <h2 id="cv-title">CV Constantin Eichhorn</h2>
+
+        <!-- Education Category -->
+        <div class="cv-category" id="education">
+            <h3>Education</h3>
+            <div class="cv-entry">
+                <div class="cv-entry-left">
+                    <p class="cv-entry-title">TUM – Technical University of Munich</p>
+                    <p class="cv-entry-description">B.Sc. in Electrical Engineering and Information Technology (expected graduation in 2027)</p>
+                </div>
+                <div class="cv-entry-right">
+                    <p class="cv-entry-location">Munich, Germany</p>
+                    <p class="cv-entry-date">10/2024 – present</p>
+                </div>
+            </div>
+            <div class="cv-entry">
+                <div class="cv-entry-left">
+                    <p class="cv-entry-title">Globe Business College</p>
+                    <p class="cv-entry-description">Business Workshop Weekend, elected Team Captain. Chosen as participant by the Dean of Privatgymnasium Holzkirchen.</p>
+                </div>
+                <div class="cv-entry-right">
+                    <p class="cv-entry-location">Munich, Germany</p>
+                    <p class="cv-entry-date">10/2023</p>
+                </div>
+            </div>
+            <div class="cv-entry">
+                <div class="cv-entry-left">
+                    <p class="cv-entry-title">Privatgymnasium Holzkirchen</p>
+                    <p class="cv-entry-description">University Entrance Qualification (Abitur), final grade 1.5.<br>Final exams in Mathematics, German, English, Computer Science and Religious Education.</p>
+                </div>
+                <div class="cv-entry-right">
+                    <p class="cv-entry-location">Holzkirchen, Germany</p>
+                    <p class="cv-entry-date">01/2018 – 06/2024</p>
+                </div>
+            </div>
+            <div class="cv-entry">
+                <div class="cv-entry-left">
+                    <p class="cv-entry-title">Brighton Primary School</p>
+                    <p class="cv-entry-description">Years 3, 5 & 6. Graduation.</p>
+                </div>
+                <div class="cv-entry-right">
+                    <p class="cv-entry-location">Melbourne, Australia</p>
+                    <p class="cv-entry-date">01/2015 – 12/2017</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Work Experience Category -->
+        <div class="cv-category" id="work-experience">
+            <h3>Work Experience</h3>
+            <div class="cv-entry">
+                <div class="cv-entry-left">
+                    <p class="cv-entry-title">SELLWERK New Businesses</p>
+                    <p class="cv-entry-subtitle">Student Internship</p>
+                    <ul class="cv-entry-details">
+                        <li>Built various websites (HTML, CSS, GitHub)</li>
+                    </ul>
+                </div>
+                <div class="cv-entry-right">
+                    <p class="cv-entry-location">Nürnberg, Germany</p>
+                    <p class="cv-entry-date">06/2022</p>
+                </div>
+            </div>
+            <div class="cv-entry">
+                <div class="cv-entry-left">
+                    <p class="cv-entry-title">HAWE Hydraulik</p>
+                    <p class="cv-entry-subtitle">Student Internship – Industrial goods</p>
+                    <ul class="cv-entry-details">
+                        <li>Built a solar powered wind turbine</li>
+                    </ul>
+                </div>
+                <div class="cv-entry-right">
+                    <p class="cv-entry-location">Sachsenkam, Germany</p>
+                    <p class="cv-entry-date">06/2022</p>
+                </div>
+            </div>
+            <div class="cv-entry">
+                <div class="cv-entry-left">
+                    <p class="cv-entry-title">Fraunhofer Institute for Building Physics IBP</p>
+                    <p class="cv-entry-subtitle">Student Internship</p>
+                    <ul class="cv-entry-details">
+                        <li>IT support</li>
+                    </ul>
+                </div>
+                <div class="cv-entry-right">
+                    <p class="cv-entry-location">Holzkirchen, Germany</p>
+                    <p class="cv-entry-date">05/2020</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills & Interests Category -->
+        <div class="cv-category" id="skills-interests">
+            <h3>Skills & Interests</h3>
+            <div class="skills-entry">
+                <p class="skills-title">Languages:</p>
+                <p>German (mother tongue), English (fluent, Cambridge Certificate C1, 196/200), French (basics)</p>
+            </div>
+            <div class="skills-entry">
+                <p class="skills-title">Technical Skills:</p>
+                <ul>
+                    <li>Basic Coding (Java, C, C++, Python)</li>
+                    <li>HTML & CSS</li>
+                    <li>Microsoft Office Suite</li>
+                </ul>
+            </div>
+            <div class="skills-entry">
+                <p class="skills-title">Sports:</p>
+                <ul>
+                    <li>Field Hockey (since 2011); Captain 1st men's team Höhenkirchen (since Sept. 2024)</li>
+                    <li>Snowboard, Football, Basketball, Rocket League (90th percentile worldwide)</li>
+                </ul>
+            </div>
+            <div class="skills-entry">
+                <p class="skills-title">Interests:</p>
+                <ul>
+                    <li>Technologies and their applications</li>
+                    <li>Reading</li>
+                    <li>Politics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>           
+        <!-- ============= PROJEKTE-BEREICH ============= -->
+        <section id="projects-section">
+            <div class="container">
+                <h2 id="projects-title">Meine Projekte</h2>
+
+                <div id="github-projects-grid" class="projects-grid">
+                    
+                    <div class="project-card">
+                        <!-- Hier ein Bild für dein Projekt einfügen -->
+                        <img class="project-image" src="bilder/tttproject1.png" alt="Projektbild">
+                        <div class="project-content">
+                            <h4 class="project-title">Tic Tac Toe</h4>
+                            <p class="project-description">
+                                In diesem Projekt habe ich zum ersten mal mit Python und Pygame programmiert. 
+                            </p>
+                            <a href="https://github.com/tr0p7cal/TicTacToe.git" class="project-link" target="_blank">Zum GitHub Repo</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <!-- Hier ein Bild für dein Projekt einfügen -->
+                        <img class="project-image" src="bilder/personalSiteproj1.png" alt="Projektbild">
+                        <div class="project-content">
+                            <h4 class="project-title">Personal Website</h4>
+                            <p class="project-description">
+                                Hier findet man     
+                            </p>
+                            <a href="#" class="project-link" target="_blank">Zum GitHub Repo</a>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                
+                <!-- <div id="other-projects-grid" class="projects-grid">
+
+                     <div class="project-card">
+                        <img class="project-image" src="https://via.placeholder.com/400x200" alt="Projektbild">
+                        <div class="project-content">
+                            <h4 class="project-title">Anderes Projekt</h4>
+                            <p class="project-description">
+                                Das könnte ein Design-Projekt, eine Fallstudie oder etwas anderes sein, das nicht auf GitHub ist.
+                            </p>
+                            <a href="#" class="project-link">Mehr erfahren</a>
+                        </div>
+                    </div>
+                 </div> -->
+                 
+            </div>
+        </section>
+
+            <!-- === Kontakt === -->
+        <section id="contact-section">
+            <div class="container">
+                <h2 id="contact-title">Kontakt</h2>
+                
+                <p id="contact-email">
+                    E-Mail: <a href="mailto:con.eichhorn@tum.de">con.eichhorn@tum.de</a>
+                </p>
+                
+                <div class="contact-links-container">
+                    <!-- Ersetze # mit deinen echten Links -->
+                    <a href="https://www.linkedin.com/in/coneichhorn/" class="contact-link" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/tr0p7cal" class="contact-link" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </section>
+ 
+
+    </main>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer id="main-footer">
+        <div class="container">
+            <p id="footer-text">&copy; 2025 Constantin Eichhorn. Alle Rechte vorbehalten.</p>
+            <!-- Hier könntest du Links zu sozialen Netzwerken einfügen -->
+        </div>
+    </footer>
+
+</body>
+</html>
