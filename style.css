@@ -75,6 +75,10 @@ a:hover {
     color: #fff;  
 }   
 
+#site-title .short-name {
+    display: none;
+}
+
 #main-nav ul {
     margin: 0;
     padding: 0;
@@ -395,30 +399,34 @@ ul.cv-entry-details,
 
 @media (max-width: 768px) {
 
-    /* --- Header & Navigation --- */
+    /* --- Header & Navigation (MOBIL) --- */
     #header-content {
-        position: relative;
-    }
-
-    #logo-container {
-        flex-shrink: 1;
-        overflow: hidden;
-        margin-right: 15px;
+        position: relative; 
     }
 
     #main-nav {
-        display: none;
+        /* 1. Verstecken und positionieren */
+        display: flex;
         flex-direction: column;
         position: absolute;
-        top: 84px;
+        top: 100%; /* Beginnt direkt unter dem Header */
         left: 0;
         width: 100%;
         background-color: var(--hauptfarbe);
-        border-top: 1px solid var(--akzentfarbe);
+        
+        /* 2. Standardmäßig unsichtbar machen */
+        visibility: hidden; /* Besser als display:none für Animationen */
+        opacity: 0;
+        transform: translateY(-10px); /* Leichter Effekt */
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        z-index: 998; /* Unter dem Header, aber über dem Rest */
     }
     
     #main-nav.is-active {
-        display: flex;
+        /* 3. Sichtbar machen, wenn die Klasse da ist */
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
     }
 
     #main-nav ul {
@@ -433,13 +441,26 @@ ul.cv-entry-details,
     
     #main-nav a {
         display: block;
-        padding: 20px 0;
+        padding: 18px 0;
         border-bottom: 1px solid rgba(189, 195, 199, 0.2);
     }
     
     #hamburger-menu {
-        display: flex; 
-        flex-shrink: 0;
+        display: flex;
+        z-index: 999;
+    }
+
+    /* --- Animation des Hamburgers zu einem "X" --- */
+    #hamburger-menu.is-active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #hamburger-menu.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #hamburger-menu.is-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
     }
     
     #site-title {
@@ -447,6 +468,14 @@ ul.cv-entry-details,
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+
+    #site-title .full-name {
+        display: none;
+    }
+
+    #site-title .short-name {
+        display: inline;
     }
     
     #logo-img {

@@ -4,10 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Klick-Event für das Hamburger-Menü
     hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('is-active');
         nav.classList.toggle('is-active');
     });
 
-    // Menü schließen, wenn auf einen Link geklickt wird (optional, aber empfohlen)
+    // Menü schließen, wenn auf einen Link geklickt wird
     const navLinks = document.querySelectorAll('#main-nav a');
     navLinks.forEach(function(link) {
         link.addEventListener('click', function() {
