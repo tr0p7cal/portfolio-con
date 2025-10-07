@@ -396,21 +396,33 @@ ul.cv-entry-details,
 @media (max-width: 768px) {
 
     /* --- Header & Navigation --- */
+    #header-content {
+        position: relative;
+    }
+
+    #logo-container {
+        flex-shrink: 1;
+        overflow: hidden;
+        margin-right: 15px;
+    }
+
     #main-nav {
-        display: none; /* Versteckt die ursprüngliche Navigation */
+        display: none;
+        flex-direction: column;
         position: absolute;
-        top: 100px; /* Höhe des Headers */
+        top: 84px;
         left: 0;
         width: 100%;
         background-color: var(--hauptfarbe);
+        border-top: 1px solid var(--akzentfarbe);
     }
     
     #main-nav.is-active {
-        display: block; /* Zeigt das Menü an, wenn es aktiv ist */
+        display: flex;
     }
 
     #main-nav ul {
-        flex-direction: column; /* Ordnet die Links untereinander an */
+        flex-direction: column;
         width: 100%;
     }
 
@@ -422,15 +434,19 @@ ul.cv-entry-details,
     #main-nav a {
         display: block;
         padding: 20px 0;
-        border-bottom: 1px solid var(--akzentfarbe);
+        border-bottom: 1px solid rgba(189, 195, 199, 0.2);
     }
     
     #hamburger-menu {
-        display: flex; /* Zeigt den Hamburger-Button auf Mobilgeräten an */
+        display: flex; 
+        flex-shrink: 0;
     }
     
     #site-title {
-        font-size: 1.5em; /* Kleinere Schriftgröße für den Titel */
+        font-size: 1.4em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     #logo-img {
@@ -440,24 +456,31 @@ ul.cv-entry-details,
 
     /* --- Hero-Bereich --- */
     .hero-buttons-container {
-        flex-direction: column; /* Ordnet die Buttons untereinander an */
-        gap: 20px;
+        flex-direction: column;
+        gap: 30px;
     }
 
     .hero-button {
-        height: 120px;
+        height: 140px;
         font-size: 1.8em;
     }
     
     /* --- Lebenslauf-Bereich --- */
+    #cv-title {
+        line-height: 1.2; 
+    }
+    #cv-title span {
+        display: block;
+    }
+
     .cv-entry {
-        flex-direction: column; /* Ordnet die Spalten untereinander an */
-        align-items: flex-start; /* Linksbündig ausrichten */
+        flex-direction: column;
+        align-items: flex-start;
         gap: 10px;
     }
 
     .cv-entry-right {
-        text-align: left; /* Text im rechten Block linksbündig */
+        text-align: left;
     }
     
     .cv-entry-date {
@@ -465,15 +488,15 @@ ul.cv-entry-details,
     }
     
     #cv-title, #projects-title, #contact-title {
-        font-size: 2em; /* Kleinere Überschriften */
+        font-size: 2em;
     }
     
     .container {
-        width: 90%; /* Mehr Platz auf kleinen Bildschirmen */
+        width: 90%;
     }
 
     /* --- Projekte-Bereich --- */
     .projects-grid {
-        grid-template-columns: 1fr; /* Nur eine Spalte, Projekte untereinander */
+        grid-template-columns: 1fr;
     }
 }
