@@ -466,12 +466,12 @@ ul.cv-entry-details,
         transform: rotate(-45deg) translate(7px, -6px);
     }
     
-    #site-title {
-        font-size: 1.4em;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+   #site-title {
+    font-size: 1.4em;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+}
 
     #site-title .full-name {
         display: none;
