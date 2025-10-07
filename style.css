@@ -55,6 +55,8 @@ a:hover {
 }
 
 #logo-container {
+    display: flex;
+    align-items: center;
     flex-grow: 1;
     flex-shrink: 1;
     overflow: hidden;
@@ -162,7 +164,8 @@ a:hover {
 
 #cv-section {
     padding: 60px 0;
-    background-color: #fff; /* White background for this section */
+    background-color: var(--akzentfarbe);
+    scroll-margin-top: 110px;
 }
 
 #cv-title {
