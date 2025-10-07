@@ -469,8 +469,6 @@ ul.cv-entry-details,
    #site-title {
     font-size: 1.4em;
     white-space: nowrap;
-    overflow: visible;
-    text-overflow: clip;
 }
 
     #site-title .full-name {
@@ -484,6 +482,10 @@ ul.cv-entry-details,
     #logo-img {
         width: 50px;
         height: 50px;
+    }
+
+    #logo-container {
+        overflow: visible;
     }
 
     /* --- Hero-Bereich --- */
