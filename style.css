@@ -1,0 +1,544 @@
+/* --- GRUNDEINSTELLUNGEN & FARBVARIABLEN --- */
+/* Ändere diese Farben, um das Design der gesamten Seite anzupassen */
+:root {
+    --hauptfarbe: #2c3e50; /* Dunkles Blau/Grau */
+    --akzentfarbe: #bdc3c7; /* Helles Grau */
+    --hintergrundfarbe: #ecf0f1; /* Sehr helles Grau */
+    --textfarbe: #34495e; /* Dunklerer Text */
+    --link-farbe: #3498db; /* Blau für Links */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--hintergrundfarbe);
+    color: var(--textfarbe);
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    color: var(--hauptfarbe);
+}
+
+a {
+    color: var(--link-farbe);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--akzentfarbe);
+}
+
+/* --- HEADER BEREICH --- */
+#main-header {
+    background-color: var(--hauptfarbe);
+    padding: 15px 0;
+    border-bottom: 2px solid var(--hintergrundfarbe);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+#logo-img {
+    width: 70px; /* Größe deines Icons anpassen */
+    height: 70px;
+    margin-right: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#site-title {
+    font-size: 2em;
+    margin: 0;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #fff;
+    overflow: visible;
+    text-overflow: clip;
+}   
+
+#site-title .short-name {
+    display: none;
+}
+
+#main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+#main-nav li {
+    margin-left: 25px;
+}
+
+#main-nav a {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ff8c00;
+}
+
+/* --- HELDEN-BEREICH (EINFÜHRUNG) --- */
+#hero {
+    min-height: 85vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.hero-buttons-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1400px;
+    gap: 60px;
+}
+
+.hero-button {
+    /* --- Größe und Form --- */
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 200px;
+    border: 4px solid var(--hauptfarbe);
+    border-radius: 15px;
+
+    /* --- Text-Zentrierung --- */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* --- Text- und Farb-Styling --- */
+    background-color: var(--hauptfarbe);
+    color: #fff;
+    font-size: 2.2em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.hero-button:hover {
+    background-color: var(--hauptfarbe);
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+#hero-headline {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#hero-intro-text {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- LEBENSLAUF / ÜBER MICH BEREICH --- */
+
+#cv-section {
+    padding: 60px 0;
+    background-color: var(--akzentfarbe);
+    scroll-margin-top: 110px;
+}
+
+#cv-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    margin-top: 90px;
+}
+
+.cv-category h3 {
+    font-size: 1.8em;
+    color: var(--hauptfarbe);
+    border-bottom: 2px solid var(--hauptfarbe);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.cv-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.cv-entry-left {
+    flex-grow: 1;
+}
+
+.cv-entry-right {
+    flex-shrink: 0; /* Prevents this column from shrinking */
+    text-align: right;
+}
+
+.cv-entry-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.cv-entry-subtitle {
+    font-style: italic;
+    color: #555;
+    margin: 5px 0;
+}
+
+.cv-entry-description {
+    margin: 5px 0 0 0;
+}
+
+.cv-entry-location {
+    font-weight: bold;
+    margin: 0;
+}
+
+.cv-entry-date {
+    margin: 5px 0 0 0;
+}
+
+ul.cv-entry-details,
+.skills-entry ul {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.skills-entry {
+    margin-bottom: 20px;
+}
+
+.skills-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+/* --- PROJEKTE BEREICH --- */
+#projects-section {
+    padding: 60px 0;
+    background-color: #fff;
+    scroll-margin-top: 60px;
+}
+
+#projects-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.project-card {
+    border: 1px solid var(--akzentfarbe);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    background-color: var(--akzentfarbe);
+    object-fit: contain; 
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-title {
+    margin-top: 0;
+}
+
+.project-description {
+    margin-bottom: 20px;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: var(--hauptfarbe);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.project-link:hover {
+    background-color: #34495e;
+    color: #fff;
+}
+/* --- TES!!!!!!!!! --- */
+.project-skill{
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+/* --- KONTAKT BEREICH --- */
+#contact-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #fff; /* Hintergrundfarbe kann bei Bedarf angepasst werden */
+}
+
+#contact-title {
+    font-size: 2.5em;
+    margin-bottom: 90px;
+}
+
+#contact-intro {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto 30px auto; /* Etwas weniger Abstand nach unten */
+}
+
+#contact-email {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 40px; /* Abstand zu den Buttons */
+}
+
+#contact-email a {
+    color: var(--hauptfarbe); /* Nutzt die Hauptfarbe für den Link */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.contact-links-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.contact-link {
+    display: inline-block;
+    padding: 15px 45px;
+    border: 3px solid var(--hauptfarbe);
+    background-color: transparent;
+    color: var(--hauptfarbe);
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: var(--hauptfarbe);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* --- FOOTER BEREICH --- */
+#main-footer {
+    background-color: var(--hauptfarbe);
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+#footer-text {
+    margin: 0;
+}
+
+
+/* --- ZUSÄTZLICHES STYLING FÜR HAMBURGER-MENÜ --- */
+
+#hamburger-menu {
+    display: none; /* Standardmäßig auf Desktops ausgeblendet */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+#hamburger-menu span {
+    width: 30px;
+    height: 3px;
+    background-color: #ff8c00;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+/* --- MEDIA QUERIES FÜR MOBILGERÄTE --- */
+/* Diese Regeln gelten für Bildschirme, die 768px oder schmaler sind */
+
+@media (max-width: 768px) {
+
+    /* --- Header & Navigation (MOBIL) --- */
+    #header-content {
+        position: relative; 
+    }
+
+    #main-nav {
+        /* 1. Verstecken und positionieren */
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Beginnt direkt unter dem Header */
+        left: 0;
+        width: 100%;
+        background-color: var(--hauptfarbe);
+        
+        /* 2. Standardmäßig unsichtbar machen */
+        visibility: hidden; /* Besser als display:none für Animationen */
+        opacity: 0;
+        transform: translateY(-10px); /* Leichter Effekt */
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        z-index: 998; /* Unter dem Header, aber über dem Rest */
+    }
+    
+    #main-nav.is-active {
+        /* 3. Sichtbar machen, wenn die Klasse da ist */
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #main-nav li {
+        text-align: center;
+        margin: 0;
+    }
+    
+    #main-nav a {
+        display: block;
+        padding: 18px 0;
+        border-bottom: 1px solid rgba(189, 195, 199, 0.2);
+    }
+    
+    #hamburger-menu {
+        display: flex;
+        z-index: 999;
+    }
+
+    /* --- Animation des Hamburgers zu einem "X" --- */
+    #hamburger-menu.is-active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #hamburger-menu.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #hamburger-menu.is-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+   #site-title {
+    font-size: 1.4em;
+    white-space: nowrap;
+}
+
+    #site-title .full-name {
+        display: none;
+    }
+
+    #site-title .short-name {
+        display: inline;
+    }
+    
+    #logo-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #logo-container {
+        overflow: visible;
+    }
+
+    /* --- Hero-Bereich --- */
+    .hero-buttons-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero-button {
+        height: 140px;
+        font-size: 1.8em;
+    }
+    
+    /* --- Lebenslauf-Bereich --- */
+    #cv-title {
+        line-height: 1.2; 
+    }
+    #cv-title span {
+        display: block;
+    }
+
+    .cv-entry {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .cv-entry-right {
+        text-align: left;
+    }
+    
+    .cv-entry-date {
+        margin-top: 0;
+    }
+    
+    #cv-title, #projects-title, #contact-title {
+        font-size: 2em;
+    }
+    
+    .container {
+        width: 90%;
+    }
+
+    /* --- Projekte-Bereich --- */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
