@@ -306,6 +306,11 @@ ul.cv-entry-details,
     background-color: #34495e;
     color: #fff;
 }
+/* --- TES!!!!!!!!! --- */
+.project-skill{
+    font-weight: bold;
+    margin-bottom: 0;
+}
 
 /* --- KONTAKT BEREICH --- */
 #contact-section {
