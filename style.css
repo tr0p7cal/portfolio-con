@@ -306,7 +306,7 @@ ul.cv-entry-details,
     background-color: #34495e;
     color: #fff;
 }
-/* --- TES!!!!!!!!! --- */
+
 .project-skill{
     font-weight: bold;
     margin-bottom: 0;
@@ -316,7 +316,7 @@ ul.cv-entry-details,
 #contact-section {
     padding: 80px 0;
     text-align: center;
-    background-color: #fff; /* Hintergrundfarbe kann bei Bedarf angepasst werden */
+    background-color: #fff; 
 }
 
 #contact-title {
@@ -327,7 +327,7 @@ ul.cv-entry-details,
 #contact-intro {
     font-size: 1.2em;
     max-width: 600px;
-    margin: 0 auto 30px auto; /* Etwas weniger Abstand nach unten */
+    margin: 0 auto 30px auto; 
 }
 
 #contact-email {
