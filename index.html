@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <title>Constantin Eichhorn</title>
-
-    <!-- Ersetze "path/to/your/icon.png" mit dem Pfad zu deinem Icon -->
     <link rel="icon" type="image/png" href="bilder/icon2.png">
-
-    <!-- Verknüpfung zur externen CSS-Datei -->
     <link rel="stylesheet" href="style.css">
+    
+
 </head>
 <body>
 
@@ -18,7 +16,6 @@
     <header id="main-header">
         <div class="container" id="header-content">
             <div id="logo-container">
-                <!-- Das ist das sichtbare Logo auf der Seite. Es bleibt hier. -->
                 <img id="logo-img" src="bilder/icon2.png" alt="Logo">
                 <h1 id="site-title">
                     <span class="full-name">Constantin Eichhorn</span>
@@ -27,275 +24,291 @@
             </div>
             <nav id="main-nav">
                 <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#projects-section">Projekte</a></li>
-                    <li><a href="#cv-section">Lebenslauf</a></li>
-                    <li><a href="#contact-section">Kontakt</a></li>
+                    <li><a class="lang" key="nav_home" href="#hero">Home</a></li>
+                    <li><a class="lang" key="nav_projects" href="#projects-section">Projekte</a></li>
+                    <li><a class="lang" key="nav_cv" href="#cv-section">Lebenslauf</a></li>
+                    <li><a class="lang" key="nav_contact" href="#contact-section">Kontakt</a></li>
+
+            <!-- LANGUAGE BUTTONS Desktop ADDED HERE -->
+                    <li class="desktop-lang-switch" style="display: flex; align-items: center;">
+                        <button class="lang-btn btn-de">DE</button>
+                        <button class="lang-btn btn-en">EN</button>
+                    </li>
                 </ul>
             </nav>
+
+            <!-- NEU: MOBILE BUTTONS CONTAINER (Nur sichtbar auf Mobile) -->
+        <div class="mobile-lang-switch">
+            <button class="lang-btn btn-de">DE</button>
+            <button class="lang-btn btn-en">EN</button>
+        </div>
             
             <button id="hamburger-menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-
         </div>
     </header>
 
     <!-- ======================= MAIN CONTENT ======================= -->
     <main>
 
-        <!-- --- HELDEN-BEREICH --- -->
-        <section id="hero">
-            <div class="hero-buttons-container">
-                 <a href="#projects-section" class="hero-button">Projekte</a>
-                <a href="#cv-section" class="hero-button">Lebenslauf</a>
-                <a href="#contact-section" class="hero-button">Kontakt</a>
-            </div>
-        </section>
+        <!-- --- HERO SECTION --- -->
+    <section id="hero">
+         <div class="hero-buttons-container">
+            <!-- Combined classes: "hero-button lang" -->
+            <a href="#projects-section" class="hero-button lang" key="hero_btn_projects">Projekte</a>
+            <a href="#cv-section" class="hero-button lang" key="hero_btn_cv">Lebenslauf</a>
+            <a href="#contact-section" class="hero-button lang" key="hero_btn_contact">Kontakt</a>
+        </div>
+    </section>
 
 
 
-
-        <!-- ============= PROJEKTE-BEREICH ============= -->
+        <!-- ============= PROJEKTE SECTION ============= -->
         <section id="projects-section">
             <div class="container">
-                <h2 id="projects-title">Meine Projekte</h2>
+                <h2 class="lang" key="projects_title" id="projects-title">Meine Projekte</h2>
 
                 <div id="github-projects-grid" class="projects-grid">
-                    
-                    <div class="project-card">
-                        <!-- Hier ein Bild für dein Projekt einfügen -->
-                        <img class="project-image" src="bilder/tttproject1.png" alt="Projektbild">
-                        <div class="project-content">
-                            <h4 class="project-title">Tic Tac Toe</h4>
-                            <p class="project-description">
-                                In diesem Projekt habe ich zum ersten mal mit Python und Pygame programmiert. 
-                            </p>
-                            <a href="https://github.com/tr0p7cal/TicTacToe.git" class="project-link" target="_blank">Zum GitHub Repo</a>
-                            <!--- TEST!!!!!!!!!!!!!-->
-                            <p class="project-skill">🐍Python | 📖Pygame</p>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <!-- Hier ein Bild für dein Projekt einfügen -->
-                        <img class="project-image" src="bilder/personalSiteproj1.png" alt="Projektbild">
-                        <div class="project-content">
-                            <h4 class="project-title">Personal Website</h4>
-                            <p class="project-description">
-                                Hier findet man den Code für diese Website. Mit diesem Projekt habe ich meine HTML und CSS kenntnisse wieder aufgefrischt.
-                            </p>
-                            <a href="#" class="project-link" target="_blank">Zum GitHub Repo</a>
-                            <!--- TEST!!!!!!!!!!!!!-->
-                            <p class="project-skill">🟡HTML & CSS | 📱Responsive Design | 🐙Github</p>
-                        </div>
-                    </div>
-                    
+    
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img class="project-image" src="bilder/tttproject1.png" alt="Projektbild">
+                <div class="project-content">
+                    <!-- Combined classes here -->
+                    <h4 class="project-title lang" key="proj_ttt_title">Tic Tac Toe</h4>
+                    <p class="project-description lang" key="proj_ttt_desc">
+                        In diesem Projekt habe ich zum ersten mal mit Python und Pygame programmiert. 
+                    </p>
+                    <a href="https://github.com/tr0p7cal/TicTacToe.git" class="project-link lang" key="btn_github" target="_blank">Zum GitHub Repo</a>
+                    <p class="project-skill">🐍Python | 📖Pygame</p>
                 </div>
+            </div>
 
-                
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img class="project-image" src="bilder/personalSiteproj1.png" alt="Projektbild">
+                <div class="project-content">
+                    <!-- Combined classes here -->
+                    <h4 class="project-title lang" key="proj_web_title">Personal Website</h4>
+                    <p class="project-description lang" key="proj_web_desc">
+                        Hier findet man den Code für diese Website. Mit diesem Projekt habe ich meine HTML und CSS kenntnisse wieder aufgefrischt.
+                    </p>
+                    <a href="#" class="project-link lang" key="btn_github" target="_blank">Zum GitHub Repo</a>
+                    <p class="project-skill">🟡HTML & CSS | 📱Responsive Design | 🐙Github</p>
+                </div>
+            </div>
+        </div>
+
+                <!-- Other Projects (Complex Description) -->
                 <div id="other-projects-grid" class="projects-grid">
-
                      <div class="project-card">
-                        <!--hier würde ein bild hin-->
                         <div class="project-content">
-                            <h4 class="project-title">Aktuelle Projekte</h4>
+                            <h4 class="project-title lang" key="proj_current_title">Aktuelle Projekte</h4>
                             
                             <p id="other-project-description" class="project-description">
-                               Python Stock Alert System: <br>
-                               Entwicklung einer automatisierten Data-Mining-Pipeline für Finanzdaten. 
-                               Ein eigens geschriebener Python-Algorithmus überwacht Aktienkurse via Web Scraping in Echtzeit. 
-                               Sobald ein definierter Zielwert erreicht wird, löst das Backend automatisch eine Benachrichtigung via SMTP (E-Mail) aus.
+                               <span class="lang" key="proj_stock_title">Python Stock Alert System:</span> <br>
+                               <span class="lang" key="proj_stock_desc">Entwicklung einer automatisierten Data-Mining-Pipeline für Finanzdaten. Ein eigens geschriebener Python-Algorithmus überwacht Aktienkurse via Web Scraping in Echtzeit. Sobald ein definierter Zielwert erreicht wird, löst das Backend automatisch eine Benachrichtigung via SMTP (E-Mail) aus.</span>
+                               
                                <p class="project-skill">🐍Python | 🕷️Webscraping | 📬SMTP | 🤖Automation</p>
                                 <br>
 
-                               NAS Home Server
+                               <span class="lang" key="proj_nas_title">NAS Home Server</span>
                                <p class="project-skill">🛠️Hardware | 💾Storage | 🛡️Security</p>
                             </p>
-                            <a class="project-link">Coming Soon</a>
+                            <a class="project-link lang" key="btn_coming_soon">Coming Soon</a>
                         </div>
                     </div>
                  </div>
-                 
             </div>
         </section>
 
+        <!-- --- CV SECTION --- -->
+        <section id="cv-section">
+            <div class="container">
+                <h2 id="cv-title"><span>CV</span> <span>Constantin Eichhorn</span></h2>
 
+                <!-- Education Category -->
+                <div class="cv-category" id="education">
+                    <h3 class="lang" key="cv_cat_education">Education</h3>
+                    
+                    <!-- Entry 1 -->
+                    <div class="cv-entry">
+                        <div class="cv-entry-left">
+                            <p class="cv-entry-title lang" key="cv_edu_tum_title">TUM – Technical University of Munich</p>
+                            <p class="cv-entry-description lang" key="cv_edu_tum_desc">B.Sc. in Electrical Engineering and Information Technology (expected graduation in 2027)</p>
+                        </div>
+                        <div class="cv-entry-right">
+                            <p class="cv-entry-location lang" key="city_munich">Munich, Germany</p>
+                            <p class="cv-entry-date lang" key="cv_edu_tum_date">10/2024 – present</p>
+                        </div>
+                    </div>
 
-        <!-- --- LEBENSLAUF-BEREICH --- -->
+                    <!-- Entry 2 -->
+                    <div class="cv-entry">
+                        <div class="cv-entry-left">
+                            <p class="cv-entry-title lang" key="cv_edu_globe_title">Globe Business College</p>
+                            <p class="cv-entry-description lang" key="cv_edu_globe_desc">Business Workshop Weekend, elected Team Captain. Chosen as participant by the Dean of Privatgymnasium Holzkirchen.</p>
+                        </div>
+                        <div class="cv-entry-right">
+                            <p class="cv-entry-location lang" key="city_munich">Munich, Germany</p>
+                            <p class="cv-entry-date lang" key="cv_edu_globe_date">10/2023</p>
+                        </div>
+                    </div>
 
- <section id="cv-section">
-    <div class="container">
-        <h2 id="cv-title"><span>CV</span> <span>Constantin Eichhorn</span></h2>
+                    <!-- Entry 3 -->
+                    <div class="cv-entry">
+                        <div class="cv-entry-left">
+                            <p class="cv-entry-title lang" key="cv_edu_school_title">Privatgymnasium Holzkirchen</p>
+                            <p class="cv-entry-description lang" key="cv_edu_school_desc">University Entrance Qualification (Abitur), final grade 1.5.<br>Final exams in Mathematics, German, English, Computer Science and Religious Education.</p>
+                        </div>
+                        <div class="cv-entry-right">
+                            <p class="cv-entry-location lang" key="city_holzkirchen">Holzkirchen, Germany</p>
+                            <p class="cv-entry-date lang" key="cv_edu_school_date">01/2018 – 06/2024</p>
+                        </div>
+                    </div>
 
-        <!-- Education Category -->
-        <div class="cv-category" id="education">
-            <h3>Education</h3>
-            <div class="cv-entry">
-                <div class="cv-entry-left">
-                    <p class="cv-entry-title">TUM – Technical University of Munich</p>
-                    <p class="cv-entry-description">B.Sc. in Electrical Engineering and Information Technology (expected graduation in 2027)</p>
+                    <!-- Entry 4 -->
+                    <div class="cv-entry">
+                        <div class="cv-entry-left">
+                            <p class="cv-entry-title lang" key="cv_edu_brighton_title">Brighton Primary School</p>
+                            <p class="cv-entry-description lang" key="cv_edu_brighton_desc">Years 3, 5 & 6. Graduation.</p>
+                        </div>
+                        <div class="cv-entry-right">
+                            <p class="cv-entry-location lang" key="city_melbourne">Melbourne, Australia</p>
+                            <p class="cv-entry-date lang" key="cv_edu_brighton_date">01/2015 – 12/2017</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="cv-entry-right">
-                    <p class="cv-entry-location">Munich, Germany</p>
-                    <p class="cv-entry-date">10/2024 – present</p>
-                </div>
-            </div>
-            <div class="cv-entry">
-                <div class="cv-entry-left">
-                    <p class="cv-entry-title">Globe Business College</p>
-                    <p class="cv-entry-description">Business Workshop Weekend, elected Team Captain. Chosen as participant by the Dean of Privatgymnasium Holzkirchen.</p>
-                </div>
-                <div class="cv-entry-right">
-                    <p class="cv-entry-location">Munich, Germany</p>
-                    <p class="cv-entry-date">10/2023</p>
-                </div>
-            </div>
-            <div class="cv-entry">
-                <div class="cv-entry-left">
-                    <p class="cv-entry-title">Privatgymnasium Holzkirchen</p>
-                    <p class="cv-entry-description">University Entrance Qualification (Abitur), final grade 1.5.<br>Final exams in Mathematics, German, English, Computer Science and Religious Education.</p>
-                </div>
-                <div class="cv-entry-right">
-                    <p class="cv-entry-location">Holzkirchen, Germany</p>
-                    <p class="cv-entry-date">01/2018 – 06/2024</p>
-                </div>
-            </div>
-            <div class="cv-entry">
-                <div class="cv-entry-left">
-                    <p class="cv-entry-title">Brighton Primary School</p>
-                    <p class="cv-entry-description">Years 3, 5 & 6. Graduation.</p>
-                </div>
-                <div class="cv-entry-right">
-                    <p class="cv-entry-location">Melbourne, Australia</p>
-                    <p class="cv-entry-date">01/2015 – 12/2017</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- Work Experience Category -->
-        <div class="cv-category" id="work-experience">
-            <h3>Work Experience</h3>
-            <div class="cv-entry">
-                <div class="cv-entry-left">
-                    <p class="cv-entry-title">Infineon Technologies AG</p>
-                    <p class="cv-entry-subtitle">Internship</p>
-                    <ul class="cv-entry-details">
-                        <li>LDMOS modeling, automation software, intelligent filter</li>
-                    </ul>
-                </div>
-                <div class="cv-entry-right">
-                    <p class="cv-entry-location">Munich, Germany</p>
-                    <p class="cv-entry-date">03/2026 - 04/2026</p>
-                </div>
-            </div>
-            <div class="cv-entry">
-                <div class="cv-entry-left">
-                    <p class="cv-entry-title">SELLWERK New Businesses</p>
-                    <p class="cv-entry-subtitle">Student Internship</p>
-                    <ul class="cv-entry-details">
-                        <li>Built various websites (HTML, CSS, GitHub)</li>
-                    </ul>
-                </div>
-                <div class="cv-entry-right">
-                    <p class="cv-entry-location">Nürnberg, Germany</p>
-                    <p class="cv-entry-date">06/2022</p>
-                </div>
-            </div>
-            <div class="cv-entry">
-                <div class="cv-entry-left">
-                    <p class="cv-entry-title">HAWE Hydraulik</p>
-                    <p class="cv-entry-subtitle">Student Internship – Industrial goods</p>
-                    <ul class="cv-entry-details">
-                        <li>Built a solar powered wind turbine</li>
-                    </ul>
-                </div>
-                <div class="cv-entry-right">
-                    <p class="cv-entry-location">Sachsenkam, Germany</p>
-                    <p class="cv-entry-date">06/2022</p>
-                </div>
-            </div>
-            <div class="cv-entry">
-                <div class="cv-entry-left">
-                    <p class="cv-entry-title">Fraunhofer Institute for Building Physics IBP</p>
-                    <p class="cv-entry-subtitle">Student Internship</p>
-                    <ul class="cv-entry-details">
-                        <li>IT support</li>
-                    </ul>
-                </div>
-                <div class="cv-entry-right">
-                    <p class="cv-entry-location">Holzkirchen, Germany</p>
-                    <p class="cv-entry-date">05/2020</p>
-                </div>
-            </div>
-        </div>
+                <!-- Work Experience Category -->
+                <div class="cv-category" id="work-experience">
+                    <h3 class="lang" key="cv_cat_work">Work Experience</h3>
+                    
+                    <!-- Work 1 -->
+                    <div class="cv-entry">
+                        <div class="cv-entry-left">
+                            <p class="cv-entry-title lang" key="cv_work_infineon_title">Infineon Technologies AG</p>
+                            <p class="cv-entry-subtitle lang" key="cv_sub_internship">Internship</p>
+                            <ul class="cv-entry-details">
+                                <li class="lang" key="cv_work_infineon_desc">LDMOS modeling, automation software, intelligent filter</li>
+                            </ul>
+                        </div>
+                        <div class="cv-entry-right">
+                            <p class="cv-entry-location lang" key="city_munich">Munich, Germany</p>
+                            <p class="cv-entry-date">03/2026 - 04/2026</p>
+                        </div>
+                    </div>
 
-        <!-- Skills & Interests Category -->
-        <div class="cv-category" id="skills-interests">
-            <h3>Skills & Interests</h3>
-            <div class="skills-entry">
-                <p class="skills-title">Languages:</p>
-                <p>German (mother tongue), English (fluent, Cambridge Certificate C1, 196/200), French (basics)</p>
-            </div>
-            <div class="skills-entry">
-                <p class="skills-title">Technical Skills:</p>
-                <ul>
-                    <li>Basic Coding (Java, C/C++, Python, MATLAB)</li>
-                    <li>HTML & CSS</li>
-                    <li>Microsoft Office Suite</li>
-                </ul>
-            </div>
-            <div class="skills-entry">
-                <p class="skills-title">Sports:</p>
-                <ul>
-                    <li>Field Hockey (since 2011); Captain 1st men's team Höhenkirchen (since Sept. 2024)</li>
-                    <li>Snowboard, Football, Basketball, Rocket League (90th percentile worldwide)</li>
-                </ul>
-            </div>
-            <div class="skills-entry">
-                <p class="skills-title">Interests:</p>
-                <ul>
-                    <li>Technologies and their applications</li>
-                    <li>Reading</li>
-                    <li>Politics</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>           
+                    <!-- Work 2 -->
+                    <div class="cv-entry">
+                        <div class="cv-entry-left">
+                            <p class="cv-entry-title lang" key="cv_work_sellwerk_title">SELLWERK New Businesses</p>
+                            <p class="cv-entry-subtitle lang" key="cv_sub_student_intern">Student Internship</p>
+                            <ul class="cv-entry-details">
+                                <li class="lang" key="cv_work_sellwerk_desc">Built various websites (HTML, CSS, GitHub)</li>
+                            </ul>
+                        </div>
+                        <div class="cv-entry-right">
+                            <p class="cv-entry-location lang" key="city_nuremberg">Nürnberg, Germany</p>
+                            <p class="cv-entry-date">06/2022</p>
+                        </div>
+                    </div>
 
+                    <!-- Work 3 -->
+                    <div class="cv-entry">
+                        <div class="cv-entry-left">
+                            <p class="cv-entry-title lang" key="cv_work_hawe_title">HAWE Hydraulik</p>
+                            <p class="cv-entry-subtitle lang" key="cv_sub_student_ind">Student Internship – Industrial goods</p>
+                            <ul class="cv-entry-details">
+                                <li class="lang" key="cv_work_hawe_desc">Built a solar powered wind turbine</li>
+                            </ul>
+                        </div>
+                        <div class="cv-entry-right">
+                            <p class="cv-entry-location lang" key="city_sachsenkam">Sachsenkam, Germany</p>
+                            <p class="cv-entry-date">06/2022</p>
+                        </div>
+                    </div>
 
-            <!-- === Kontakt === -->
+                    <!-- Work 4 -->
+                    <div class="cv-entry">
+                        <div class="cv-entry-left">
+                            <p class="cv-entry-title lang" key="cv_work_fraunhofer_title">Fraunhofer Institute for Building Physics IBP</p>
+                            <p class="cv-entry-subtitle lang" key="cv_sub_student_intern">Student Internship</p>
+                            <ul class="cv-entry-details">
+                                <li class="lang" key="cv_work_fraunhofer_desc">IT support</li>
+                            </ul>
+                        </div>
+                        <div class="cv-entry-right">
+                            <p class="cv-entry-location lang" key="city_holzkirchen">Holzkirchen, Germany</p>
+                            <p class="cv-entry-date">05/2020</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills & Interests Category -->
+                <div class="cv-category" id="skills-interests">
+                    <h3 class="lang" key="cv_cat_skills">Skills & Interests</h3>
+                    
+                    <div class="skills-entry">
+                        <p class="skills-title lang" key="cv_skill_lang_title">Languages:</p>
+                        <p class="lang" key="cv_skill_lang_desc">German (mother tongue), English (fluent, Cambridge Certificate C1, 196/200), French (basics)</p>
+                    </div>
+                    
+                    <div class="skills-entry">
+                        <p class="skills-title lang" key="cv_skill_tech_title">Technical Skills:</p>
+                        <ul>
+                            <li class="lang" key="cv_skill_tech_desc1">Basic Coding (Java, C/C++, Python, MATLAB)</li>
+                            <li>HTML & CSS</li>
+                            <li class="lang" key="cv_skill_tech_desc3">Microsoft Office Suite</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skills-entry">
+                        <p class="skills-title lang" key="cv_skill_sport_title">Sports:</p>
+                        <ul>
+                            <li class="lang" key="cv_skill_sport_desc1">Field Hockey (since 2011); Captain 1st men's team Höhenkirchen (since Sept. 2024)</li>
+                            <li class="lang" key="cv_skill_sport_desc2">Snowboard, Football, Basketball, Rocket League (90th percentile worldwide)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skills-entry">
+                        <p class="skills-title lang" key="cv_skill_interest_title">Interests:</p>
+                        <ul>
+                            <li class="lang" key="cv_skill_interest_desc1">Technologies and their applications</li>
+                            <li class="lang" key="cv_skill_interest_desc2">Reading</li>
+                            <li class="lang" key="cv_skill_interest_desc3">Politics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>           
+
+        <!-- === Kontakt === -->
         <section id="contact-section">
             <div class="container">
-                <h2 id="contact-title">Kontakt</h2>
-                
+                <h2 class="contact-title lang" key="contact_title">Kontakt</h2>
                 <p id="contact-email">
                     E-Mail: <a href="mailto:con.eichhorn@tum.de">con.eichhorn@tum.de</a>
                 </p>
-                
                 <div class="contact-links-container">
-                    <!-- Ersetze # mit deinen echten Links -->
                     <a href="https://www.linkedin.com/in/coneichhorn/" class="contact-link" target="_blank">LinkedIn</a>
                     <a href="https://github.com/tr0p7cal" class="contact-link" target="_blank">GitHub</a>
                 </div>
             </div>
         </section>
- 
 
     </main>
 
     <!-- ======================= FOOTER ======================= -->
     <footer id="main-footer">
         <div class="container">
-            <p id="footer-text">&copy; 2025 Constantin Eichhorn. Alle Rechte vorbehalten.</p>
-            <!-- Hier könntest du Links zu sozialen Netzwerken einfügen -->
+            <p class="lang" key="footer_text" id="footer-text">&copy; 2025 Constantin Eichhorn. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-
 </body> 
 </html>

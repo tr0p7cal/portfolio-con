@@ -379,6 +379,24 @@ ul.cv-entry-details,
     margin: 0;
 }
 
+.lang-btn {
+    background: white;
+    border: 1px solid currentColor;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 5px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    color: inherit;
+}
+.lang-btn:hover {
+    opacity: 0.7;
+}
+
+.mobile-lang-switch {
+    display: none;
+}
+
 
 /* --- ZUSÄTZLICHES STYLING FÜR HAMBURGER-MENÜ --- */
 
@@ -410,9 +428,22 @@ ul.cv-entry-details,
 
 @media (max-width: 768px) {
 
+    .desktop-lang-switch {
+        display: none !important;
+    }
+
+    .mobile-lang-switch {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+    }
+
     /* --- Header & Navigation (MOBIL) --- */
     #header-content {
         position: relative; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     #main-nav {
@@ -541,4 +572,5 @@ ul.cv-entry-details,
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
 }
