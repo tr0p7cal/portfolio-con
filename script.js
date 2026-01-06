@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // CV - Skills
             cv_cat_skills: "Fähigkeiten & Interessen",
             cv_skill_lang_title: "Sprachen:",
-            cv_skill_lang_desc: "Deutsch (Muttersprache), Englisch (fließend, Cambridge Certifikat C1, 196/200), Französisch (Grundkenntnisse)",
+            cv_skill_lang_desc: "Deutsch (Muttersprache), Englisch (fließend, Cambridge Zertifikat C1, 196/200), Französisch (Grundkenntnisse)",
             
             cv_skill_tech_title: "Technische Fähigkeiten:",
             cv_skill_tech_desc1: "Grundlagen Coding (Java, C/C++, Python, MATLAB)",
