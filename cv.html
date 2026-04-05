@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>CV | Constantin Eichhorn</title>
+    <link rel="icon" type="image/png" href="bilder/icon2.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ======================= HEADER ======================= -->
+    <header id="main-header">
+        <div class="container" id="header-content">
+            <div id="logo-container">
+                <img id="logo-img" src="bilder/icon2.png" alt="Logo">
+                <h1 id="site-title">
+                    <span class="full-name">Constantin Eichhorn</span>
+                    <span class="short-name">C. Eichhorn</span>
+                </h1>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a class="lang" key="nav_home" href="index.html#hero">Home</a></li>
+                    <li><a class="lang" key="nav_projects" href="index.html#projects-section">Projekte</a></li>
+                    <li><a class="lang" key="nav_cv" href="index.html#cv-section">Lebenslauf</a></li>
+                    <li><a class="lang" key="nav_contact" href="index.html#contact-section">Kontakt</a></li>
+
+                    <!-- LANGUAGE BUTTONS Desktop ADDED HERE -->
+                    <li class="desktop-lang-switch" style="display: flex; align-items: center;">
+                        <button class="lang-btn btn-de">DE</button>
+                        <button class="lang-btn btn-en">EN</button>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- NEU: MOBILE BUTTONS CONTAINER (Nur sichtbar auf Mobile) -->
+            <div class="mobile-lang-switch">
+                <button class="lang-btn btn-de">DE</button>
+                <button class="lang-btn btn-en">EN</button>
+            </div>
+
+            <button id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ======================= MAIN CONTENT ======================= -->
+    <main>
+
+        <!-- --- CV DOWNLOAD SECTION --- -->
+        <section id="cv-section">
+            <div class="container" id="cv-download-content">
+                <h2 id="cv-title"><span>CV</span> <span>Constantin Eichhorn</span></h2>
+
+                <p class="lang" key="cv_token_info" id="cv-token-info">Um den Lebenslauf herunterzuladen, benötigst du einen persönlichen Token. Diesen kannst du per E-Mail bei mir anfragen.</p>
+
+                <!-- Token input and confirm action -->
+                <div id="token-form">
+                    <input type="text" id="token-input" placeholder="Token eingeben">
+                    <button id="token-confirm-btn" class="lang" key="cv_confirm_btn" onclick="validateToken()">Bestätigen</button>
+                </div>
+
+                <!-- Token error output -->
+                <p id="token-error" class="lang" key="cv_token_error_invalid" style="display: none;">Ungültiger Token. Bitte erneut versuchen.</p>
+
+                <!-- Download section (shown after successful validation) -->
+                <div id="download-section" style="display: none;">
+                    <div class="cv-download-buttons">
+                        <!-- Combined classes: "hero-button lang" -->
+                        <button class="hero-button lang" key="cv_download_de" onclick="downloadCV('cv-de.pdf')">Lebenslauf Deutsch (PDF)</button>
+                        <button class="hero-button lang" key="cv_download_en" onclick="downloadCV('cv-en.pdf')">CV English (PDF)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer id="main-footer">
+        <div class="container">
+            <p class="lang" key="footer_text" id="footer-text">&copy; 2025 Constantin Eichhorn. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

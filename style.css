@@ -175,6 +175,85 @@ a:hover {
     margin-top: 90px;
 }
 
+#cv-teaser,
+#cv-token-info {
+    text-align: center;
+    font-size: 1.15em;
+    max-width: 760px;
+    margin: 0 auto 35px auto;
+}
+
+.cv-cta-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#cv-download-content {
+    text-align: center;
+}
+
+#token-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#token-input {
+    width: 100%;
+    max-width: 360px;
+    padding: 12px 14px;
+    border: 2px solid var(--hauptfarbe);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--textfarbe);
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+#token-confirm-btn {
+    padding: 12px 22px;
+    border: 2px solid var(--hauptfarbe);
+    border-radius: 8px;
+    background-color: var(--hauptfarbe);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#token-confirm-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+#token-error {
+    color: #b00020;
+    font-weight: 600;
+    margin: 16px 0 0 0;
+}
+
+#download-section {
+    margin-top: 24px;
+}
+
+.cv-download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.cv-download-buttons .hero-button {
+    flex-basis: 320px;
+    flex-grow: 0;
+    height: 110px;
+    font-size: 1.25em;
+    border-width: 3px;
+}
+
 .cv-category h3 {
     font-size: 1.8em;
     color: var(--hauptfarbe);
@@ -306,7 +385,7 @@ ul.cv-entry-details,
     background-color: #34495e;
     color: #fff;
 }
-/* --- TES!!!!!!!!! --- */
+
 .project-skill{
     font-weight: bold;
     margin-bottom: 0;
@@ -316,7 +395,7 @@ ul.cv-entry-details,
 #contact-section {
     padding: 80px 0;
     text-align: center;
-    background-color: #fff; /* Hintergrundfarbe kann bei Bedarf angepasst werden */
+    background-color: #fff; 
 }
 
 #contact-title {
@@ -327,7 +406,7 @@ ul.cv-entry-details,
 #contact-intro {
     font-size: 1.2em;
     max-width: 600px;
-    margin: 0 auto 30px auto; /* Etwas weniger Abstand nach unten */
+    margin: 0 auto 30px auto; 
 }
 
 #contact-email {
@@ -379,6 +458,24 @@ ul.cv-entry-details,
     margin: 0;
 }
 
+.lang-btn {
+    background: white;
+    border: 1px solid currentColor;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 5px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    color: inherit;
+}
+.lang-btn:hover {
+    opacity: 0.7;
+}
+
+.mobile-lang-switch {
+    display: none;
+}
+
 
 /* --- ZUSÄTZLICHES STYLING FÜR HAMBURGER-MENÜ --- */
 
@@ -410,9 +507,22 @@ ul.cv-entry-details,
 
 @media (max-width: 768px) {
 
+    .desktop-lang-switch {
+        display: none !important;
+    }
+
+    .mobile-lang-switch {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+    }
+
     /* --- Header & Navigation (MOBIL) --- */
     #header-content {
         position: relative; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     #main-nav {
@@ -506,6 +616,34 @@ ul.cv-entry-details,
         height: 140px;
         font-size: 1.8em;
     }
+
+    .cv-cta-container .hero-button {
+        height: 120px;
+    }
+
+    #token-form {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    #token-confirm-btn {
+        width: 100%;
+    }
+
+    .cv-download-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .cv-download-buttons .hero-button {
+        width: 100%;
+        flex-basis: auto;
+        height: 100px;
+        font-size: 1.1em;
+    }
     
     /* --- Lebenslauf-Bereich --- */
     #cv-title {
@@ -541,4 +679,5 @@ ul.cv-entry-details,
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
 }
