@@ -247,6 +247,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.lang = lang;
     }
 
+    let currentCvToken = null;
+
     function getTranslationValue(key) {
         const activeLang = document.documentElement.lang === 'en' ? 'en' : 'de';
         if (translations[activeLang] && translations[activeLang][key]) {
@@ -313,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = await response.json();
 
             if (response.ok && data.valid === true) {
-                sessionStorage.setItem('cv-token', token);
+                currentCvToken = token;
                 setCvAccessState(true);
                 return;
             }
@@ -325,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     window.downloadCV = function downloadCV(filename) {
-        const token = sessionStorage.getItem('cv-token');
+        const token = currentCvToken;
 
         if (!token) {
             showTokenError('cv_token_error_missing');
@@ -366,8 +368,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial state for cv.html token flow
     if (document.getElementById('token-input')) {
-        const storedToken = sessionStorage.getItem('cv-token');
-        setCvAccessState(Boolean(storedToken));
+        setCvAccessState(false);
     }
+
+    window.addEventListener('pagehide', function() {
+        currentCvToken = null;
+    });
 
 }); 
