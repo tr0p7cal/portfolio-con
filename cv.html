@@ -76,6 +76,33 @@
                         <button class="hero-button lang" key="cv_download_en" onclick="downloadCV('cv-en.pdf')">CV English (PDF)</button>
                     </div>
                 </div>
+
+                <!-- ======================= TOKEN REQUEST SECTION ======================= -->
+                <section id="request-section">
+                    <p class="lang" key="cv_request_info" id="request-info">Noch kein Token? Hier kannst du einen anfragen.</p>
+
+                    <div id="request-form">
+                        <div class="request-field">
+                            <label class="lang" key="request_name_label" for="request-name">Name</label>
+                            <input type="text" id="request-name" autocomplete="name">
+                        </div>
+
+                        <div class="request-field">
+                            <label class="lang" key="request_email_label" for="request-email">E-Mail</label>
+                            <input type="email" id="request-email" autocomplete="email">
+                        </div>
+
+                        <div class="request-field">
+                            <label class="lang" key="request_message_label" for="request-message">Nachricht (optional)</label>
+                            <textarea id="request-message" rows="4"></textarea>
+                        </div>
+
+                        <button id="request-submit-btn" class="lang" key="cv_request_btn" onclick="requestToken()">Token anfragen</button>
+                    </div>
+
+                    <p id="request-success" class="lang" key="cv_request_success" style="display: none;" aria-live="polite">Anfrage gesendet! Schau in deine Emails.</p>
+                    <p id="request-error" class="lang" key="cv_request_error" style="display: none;" aria-live="polite">Etwas ist schiefgelaufen. Bitte versuche es erneut.</p>
+                </section>
             </div>
         </section>
 

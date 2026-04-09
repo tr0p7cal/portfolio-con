@@ -61,6 +61,15 @@ document.addEventListener('DOMContentLoaded', function() {
             cv_confirm_btn: "Bestätigen",
             cv_download_de: "Lebenslauf Deutsch (PDF)",
             cv_download_en: "CV English (PDF)",
+            cv_request_info: "Noch kein Token? Hier kannst du einen anfragen.",
+            cv_request_btn: "Token anfragen",
+            cv_request_success: "Anfrage gesendet! Schau in deine Emails.",
+            cv_request_error: "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+            cv_request_missing_fields: "Bitte gib deinen Namen und deine E-Mail-Adresse ein.",
+            cv_request_invalid_email: "Bitte gib eine gültige E-Mail-Adresse ein.",
+            request_name_label: "Name",
+            request_email_label: "E-Mail",
+            request_message_label: "Nachricht (optional)",
             cv_token_error_invalid: "Ungültiger Token. Bitte erneut versuchen.",
             cv_token_error_missing: "Bitte gib zuerst einen gültigen Token ein.",
             cv_token_error_request: "Validierung aktuell nicht möglich. Bitte versuche es erneut.",
@@ -161,6 +170,15 @@ document.addEventListener('DOMContentLoaded', function() {
             cv_confirm_btn: "Confirm",
             cv_download_de: "Lebenslauf Deutsch (PDF)",
             cv_download_en: "CV English (PDF)",
+            cv_request_info: "No token yet? You can request one here.",
+            cv_request_btn: "Request token",
+            cv_request_success: "Request sent! Check your emails.",
+            cv_request_error: "Something went wrong. Please try again.",
+            cv_request_missing_fields: "Please enter your name and email address.",
+            cv_request_invalid_email: "Please enter a valid email address.",
+            request_name_label: "Name",
+            request_email_label: "Email",
+            request_message_label: "Message (optional)",
             cv_token_error_invalid: "Invalid token. Please try again.",
             cv_token_error_missing: "Please enter a valid token first.",
             cv_token_error_request: "Validation is currently unavailable. Please try again.",
@@ -266,6 +284,45 @@ document.addEventListener('DOMContentLoaded', function() {
         tokenError.style.display = 'block';
     }
 
+    function setRequestMessageVisibility({ showForm = true, showSuccess = false, showError = false } = {}) {
+        const requestForm = document.getElementById('request-form');
+        const requestSuccess = document.getElementById('request-success');
+        const requestError = document.getElementById('request-error');
+
+        if (requestForm) {
+            requestForm.style.display = showForm ? 'flex' : 'none';
+        }
+
+        if (requestSuccess) {
+            requestSuccess.style.display = showSuccess ? 'block' : 'none';
+        }
+
+        if (requestError) {
+            requestError.style.display = showError ? 'block' : 'none';
+        }
+    }
+
+    function showRequestMessage(key, isError = true) {
+        const requestSuccess = document.getElementById('request-success');
+        const requestError = document.getElementById('request-error');
+        const target = isError ? requestError : requestSuccess;
+
+        if (!target) {
+            return;
+        }
+
+        target.textContent = getTranslationValue(key);
+        setRequestMessageVisibility({
+            showForm: true,
+            showSuccess: !isError,
+            showError: isError,
+        });
+    }
+
+    function clearRequestFeedback() {
+        setRequestMessageVisibility({ showForm: true, showSuccess: false, showError: false });
+    }
+
     function setCvAccessState(hasAccess) {
         const tokenInput = document.getElementById('token-input');
         const tokenButton = document.getElementById('token-confirm-btn');
@@ -342,6 +399,65 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+    };
+
+    window.requestToken = async function requestToken() {
+        const requestName = document.getElementById('request-name');
+        const requestEmail = document.getElementById('request-email');
+        const requestMessage = document.getElementById('request-message');
+        const requestButton = document.getElementById('request-submit-btn');
+        const requestForm = document.getElementById('request-form');
+        const requestSuccess = document.getElementById('request-success');
+        const requestError = document.getElementById('request-error');
+
+        if (!requestName || !requestEmail || !requestMessage || !requestButton || !requestForm || !requestSuccess || !requestError) {
+            return;
+        }
+
+        const name = requestName.value.trim();
+        const email = requestEmail.value.trim();
+        const message = requestMessage.value.trim();
+
+        clearRequestFeedback();
+
+        if (!name || !email) {
+            showRequestMessage('cv_request_missing_fields', true);
+            return;
+        }
+
+        if (!requestEmail.checkValidity()) {
+            showRequestMessage('cv_request_invalid_email', true);
+            return;
+        }
+
+        requestButton.disabled = true;
+        requestButton.setAttribute('aria-busy', 'true');
+
+        try {
+            const response = await fetch('https://download.coneichhorn.de/request-token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, message }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data && data.success === true) {
+                requestForm.style.display = 'none';
+                requestSuccess.style.display = 'block';
+                requestError.style.display = 'none';
+                return;
+            }
+
+            showRequestMessage('cv_request_error', true);
+        } catch (error) {
+            showRequestMessage('cv_request_error', true);
+        } finally {
+            requestButton.disabled = false;
+            requestButton.removeAttribute('aria-busy');
+        }
     };
 
     // --- BUTTON EVENT LISTENER (AKTUALISIERT) ---
