@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             cv_request_error: "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
             cv_request_missing_fields: "Bitte gib deinen Namen und deine E-Mail-Adresse ein.",
             cv_request_invalid_email: "Bitte gib eine gültige E-Mail-Adresse ein.",
+            cv_request_message_placeholder: "Nachricht (optional)",
             request_name_label: "Name",
             request_email_label: "E-Mail",
             request_message_label: "Nachricht (optional)",
@@ -176,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
             cv_request_error: "Something went wrong. Please try again.",
             cv_request_missing_fields: "Please enter your name and email address.",
             cv_request_invalid_email: "Please enter a valid email address.",
+            cv_request_message_placeholder: "Message (optional)",
             request_name_label: "Name",
             request_email_label: "Email",
             request_message_label: "Message (optional)",
@@ -257,7 +259,11 @@ document.addEventListener('DOMContentLoaded', function() {
         elements.forEach(element => {
             const key = element.getAttribute('key');
             if (translations[lang] && translations[lang][key]) {
-                element.textContent = translations[lang][key];
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = translations[lang][key];
+                } else {
+                    element.textContent = translations[lang][key];
+                }
             }
         });
         
