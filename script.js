@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // --- TRANSLATION DATA ---
+    const LANGUAGE_STORAGE_KEY = 'preferredLanguage';
+
     const translations = {
         de: {
             // Nav & Hero
@@ -252,23 +254,59 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    function normalizeLanguage(lang) {
+        return lang === 'en' ? 'en' : 'de';
+    }
+
+    function getStoredLanguage() {
+        try {
+            return normalizeLanguage(localStorage.getItem(LANGUAGE_STORAGE_KEY));
+        } catch (error) {
+            return 'de';
+        }
+    }
+
+    function saveLanguage(lang) {
+        try {
+            localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+        } catch (error) {
+            // Ignore storage failures and keep the in-memory language state.
+        }
+    }
+
+    function updateLanguageButtons(lang, showVisualState = false) {
+        const resolvedLang = normalizeLanguage(lang);
+
+        document.querySelectorAll('.lang-btn').forEach(button => {
+            const isActive = resolvedLang === 'en'
+                ? button.classList.contains('btn-en')
+                : button.classList.contains('btn-de');
+
+            button.classList.toggle('is-active', showVisualState && isActive);
+            button.setAttribute('aria-pressed', String(isActive));
+        });
+    }
+
     // --- FUNCTION TO CHANGE LANGUAGE ---
-    function changeLanguage(lang) {
+    function changeLanguage(lang, showVisualState = false) {
+        const resolvedLang = normalizeLanguage(lang);
         const elements = document.querySelectorAll('.lang');
         
         elements.forEach(element => {
             const key = element.getAttribute('key');
-            if (translations[lang] && translations[lang][key]) {
+            if (translations[resolvedLang] && translations[resolvedLang][key]) {
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    element.placeholder = translations[lang][key];
+                    element.placeholder = translations[resolvedLang][key];
                 } else {
-                    element.textContent = translations[lang][key];
+                    element.textContent = translations[resolvedLang][key];
                 }
             }
         });
         
         // Optional: Change the HTML lang attribute (good for SEO)
-        document.documentElement.lang = lang;
+        document.documentElement.lang = resolvedLang;
+        updateLanguageButtons(resolvedLang, showVisualState);
+        saveLanguage(resolvedLang);
     }
 
     let currentCvToken = null;
@@ -475,7 +513,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Schleife durch alle Englischen Buttons
     buttonsEn.forEach(button => {
         button.addEventListener('click', function() {
-            changeLanguage('en');
+            changeLanguage('en', true);
             closeMenu(); // Optional: Menü schließen nach Klick (gut für Mobile)
         });
     });
@@ -483,10 +521,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Schleife durch alle Deutschen Buttons
     buttonsDe.forEach(button => {
         button.addEventListener('click', function() {
-            changeLanguage('de');
+            changeLanguage('de', true);
             closeMenu(); // Optional: Menü schließen nach Klick
         });
     });
+
+    changeLanguage(getStoredLanguage());
 
     // Initial state for cv.html token flow
     if (document.getElementById('token-input')) {

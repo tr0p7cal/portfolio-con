@@ -562,11 +562,28 @@ ul.cv-entry-details,
     background: white;
     border: 1px solid currentColor;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 5px 8px;
     margin-left: 5px;
     font-size: 0.9rem;
     border-radius: 4px;
     color: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.lang-flag {
+    width: 24px;
+    height: 16px;
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.lang-btn.is-active {
+    background: var(--akzentfarbe);
+    color: var(--hauptfarbe);
+    border-color: var(--hauptfarbe);
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    opacity: 1;
 }
 .lang-btn:hover {
     opacity: 0.7;
