@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Contact & Footer
             contact_title: "Kontakt",
-            footer_text: "© 2025 Constantin Eichhorn. Alle Rechte vorbehalten."
+            footer_text: "© 2026 Constantin Eichhorn. Alle Rechte vorbehalten."
         },
         en: {
             // Nav & Hero
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Contact & Footer
             contact_title: "Contact",
-            footer_text: "© 2025 Constantin Eichhorn. All rights reserved."
+            footer_text: "© 2026 Constantin Eichhorn. All rights reserved."
         }
     };
 
