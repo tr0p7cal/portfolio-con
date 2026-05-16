@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const name = requestName.value.trim();
         const email = requestEmail.value.trim();
-        const message = requestMessage.value.trim();
+        const message = document.getElementById('request-message').value;
 
         clearRequestFeedback();
 
