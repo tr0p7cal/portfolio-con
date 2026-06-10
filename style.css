@@ -486,9 +486,34 @@ ul.cv-entry-details,
     color: #fff;
 }
 
+/* Non-interactive look for Coming Soon (keeps appearance but no hover change) */
+.coming-soon{
+    display: inline-block;
+    background-color: var(--hauptfarbe);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: default;
+}
+
 .project-skill{
     font-weight: bold;
     margin-bottom: 0;
+}
+
+.skill-item{
+    display: inline-block;
+    white-space: nowrap; /* keep emoji and word together */
+    margin-right: 10px;
+}
+
+.skill-item::before{
+    content: "";
+}
+.skill-item + .skill-item::before{
+    content: " | ";
 }
 
 /* --- KONTAKT BEREICH --- */

@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             proj_stock_title: "Python Stock Alert System:",
             proj_stock_desc: "Entwicklung einer automatisierten Data-Mining-Pipeline für Finanzdaten. Ein eigens geschriebener Python-Algorithmus überwacht Aktienkurse via Web Scraping in Echtzeit. Sobald ein definierter Zielwert erreicht wird, löst das Backend automatisch eine Benachrichtigung via SMTP (E-Mail) aus.",
             proj_nas_title: "NAS Home Server",
+            proj_nas_desc: "Aufbau eines privaten Home-Servers zur Bereitstellung eines NAS und weiterer Dienste 🖥️🔧. Der Server hostet verschlüsselten Netzwerkspeicher, erzeugt sichere Tokens für den CV-Download und automatisiert wiederkehrende Aufgaben mittels Skripten. Ziel ist ein zuverlässiges Backup-System, einfache Datei-Freigabe im LAN und eine schlanke Weboberfläche zur Verwaltung und Automatisierung. 🔐💾⚙️",
             btn_coming_soon: "Coming Soon",
 
             // CV - Education
@@ -164,6 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
             proj_stock_title: "Python Stock Alert System:",
             proj_stock_desc: "Development of an automated data mining pipeline for financial data. A custom Python algorithm monitors stock prices via web scraping in real time. As soon as a defined target value is reached, the backend automatically triggers a notification via SMTP (email).",
             proj_nas_title: "NAS Home Server",
+            proj_nas_desc: "Building a private home server to provide a NAS and additional services 🖥️🔧. The server hosts encrypted network storage, generates secure tokens for CV downloads, and automates recurring tasks via scripts. Goals are a reliable backup system, easy file sharing across the LAN, and a lightweight web UI for management and automation. 🔐💾⚙️",
             btn_coming_soon: "Coming Soon",
 
             // CV - Education
