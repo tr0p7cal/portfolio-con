@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Prosthesis | Bionic Arm Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bionic-arm.css">
+</head>
+<body>
+
+    <!-- ======================= NAVIGATION ======================= -->
+    <nav class="quantum-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-back">← Back to Portfolio</a>
+            <div class="nav-logo">
+                QUANTUM<span class="logo-accent">.</span>PROSTHESIS
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================= HERO SECTION ======================= -->
+    <section id="hero" class="hero-section">
+        <div class="circuit-bg"></div>
+        <div class="quantum-grid"></div>
+
+        <div class="hero-container">
+            <div class="hero-title">
+                <div class="hero-eyebrow">
+                    <span class="eyebrow-line"></span>
+                    NEXT GENERATION BIONICS
+                </div>
+                <h1>QUANTUM PROSTHESIS<span class="tm">™</span></h1>
+                <p class="hero-subtitle">Revolutionary arm prosthetics powered by quantum sensor technology</p>
+            </div>
+
+            <div class="arm-display" id="arm-display">
+                <div class="arm-container">
+                    <div class="arm-layer arm-normal">
+                        <svg viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Simplified human arm base -->
+                            <ellipse cx="200" cy="100" rx="80" ry="60" fill="#1a1a2e" stroke="#00f0ff" stroke-width="1"/>
+                            <rect x="160" y="150" width="80" height="200" rx="40" fill="#1a1a2e" stroke="#00f0ff" stroke-width="1"/>
+                            <rect x="140" y="340" width="120" height="180" rx="30" fill="#1a1a2e" stroke="#00f0ff" stroke-width="1"/>
+                            <rect x="150" y="510" width="100" height="150" rx="20" fill="#1a1a2e" stroke="#00f0ff" stroke-width="1"/>
+                            <!-- Hand outline -->
+                            <ellipse cx="200" cy="680" rx="50" ry="60" fill="#1a1a2e" stroke="#00f0ff" stroke-width="1"/>
+                        </svg>
+                    </div>
+
+                    <div class="arm-layer arm-prosthesis">
+                        <svg viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Iron Man style prosthesis overlay -->
+                            <defs>
+                                <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#2a2a4a;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#3a3a5a;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+                                </linearGradient>
+                                <filter id="glow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+
+                            <!-- Shoulder joint with quantum sensor -->
+                            <circle cx="200" cy="100" r="70" fill="url(#metalGradient)" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
+                            <circle cx="200" cy="100" r="40" fill="#0a0a0f" stroke="#00f0ff" stroke-width="1" opacity="0.8"/>
+                            <circle cx="200" cy="100" r="20" fill="#00f0ff" opacity="0.3" class="sensor-pulse"/>
+
+                            <!-- Upper arm with tech details -->
+                            <rect x="160" y="160" width="80" height="200" rx="40" fill="url(#metalGradient)" stroke="#00f0ff" stroke-width="2"/>
+
+                            <!-- Quantum sensor array on upper arm -->
+                            <rect x="175" y="180" width="50" height="60" fill="#0a0a0f" stroke="#7000ff" stroke-width="1" opacity="0.7"/>
+                            <circle cx="200" cy="210" r="15" fill="#7000ff" opacity="0.5" class="sensor-glow"/>
+                            <circle cx="200" cy="210" r="8" fill="#7000ff" filter="url(#glow)"/>
+
+                            <!-- Circuit lines -->
+                            <g stroke="#00ff88" stroke-width="1" opacity="0.6">
+                                <line x1="185" y1="260" x2="215" y2="260"/>
+                                <line x1="185" y1="270" x2="215" y2="270"/>
+                                <line x1="185" y1="280" x2="215" y2="280"/>
+                            </g>
+
+                            <!-- Elbow joint -->
+                            <circle cx="200" cy="360" r="35" fill="url(#metalGradient)" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
+                            <circle cx="200" cy="360" r="20" fill="#0a0a0f" stroke="#00f0ff" stroke-width="1"/>
+
+                            <!-- Forearm with more tech -->
+                            <rect x="140" y="390" width="120" height="180" rx="30" fill="url(#metalGradient)" stroke="#00f0ff" stroke-width="2"/>
+
+                            <!-- Secondary sensor array -->
+                            <rect x="160" y="410" width="80" height="80" fill="#0a0a0f" stroke="#7000ff" stroke-width="1" opacity="0.7"/>
+                            <circle cx="200" cy="450" r="25" fill="#7000ff" opacity="0.5" class="sensor-glow"/>
+                            <circle cx="200" cy="450" r="12" fill="#7000ff" filter="url(#glow)"/>
+
+                            <!-- Data display lines -->
+                            <g stroke="#00ff88" stroke-width="1" opacity="0.6">
+                                <line x1="155" y1="510" x2="245" y2="510"/>
+                                <line x1="155" y1="520" x2="245" y2="520"/>
+                                <line x1="155" y1="530" x2="245" y2="530"/>
+                            </g>
+
+                            <!-- Wrist joint -->
+                            <circle cx="200" cy="570" r="25" fill="url(#metalGradient)" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
+
+                            <!-- Hand with tech details -->
+                            <rect x="150" y="590" width="100" height="120" rx="20" fill="url(#metalGradient)" stroke="#00f0ff" stroke-width="2"/>
+
+                            <!-- Finger sensors -->
+                            <g class="finger-sensors">
+                                <rect x="160" y="620" width="12" height="50" rx="6" fill="url(#metalGradient)" stroke="#00f0ff" stroke-width="1"/>
+                                <rect x="176" y="615" width="12" height="60" rx="6" fill="url(#metalGradient)" stroke="#00f0ff" stroke-width="1"/>
+                                <rect x="192" y="612" width="12" height="65" rx="6" fill="url(#metalGradient)" stroke="#00f0ff" stroke-width="1"/>
+                                <rect x="208" y="615" width="12" height="60" rx="6" fill="url(#metalGradient)" stroke="#00f0ff" stroke-width="1"/>
+                                <rect x="224" y="620" width="12" height="50" rx="6" fill="url(#metalGradient)" stroke="#00f0ff" stroke-width="1"/>
+                            </g>
+
+                            <!-- Quantum energy flow lines -->
+                            <g stroke="#00f0ff" stroke-width="1" opacity="0.4" class="energy-flow">
+                                <line x1="200" y1="100" x2="200" y2="160"/>
+                                <line x1="200" y1="260" x2="200" y2="330"/>
+                                <line x1="200" y1="390" x2="200" y2="540"/>
+                                <line x1="200" y1="570" x2="200" y2="590"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="magnifier-hint">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                            <line x1="11" y1="8" x2="11" y2="14"/>
+                            <line x1="8" y1="11" x2="14" y2="11"/>
+                        </svg>
+                        <span>HOVER TO SCAN</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <span>SCROLL TO EXPLORE</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= QUANTUM SENSORS SECTION ======================= -->
+    <section class="tech-section" id="quantum-sensors">
+        <div class="section-container">
+            <div class="section-content">
+                <div class="section-header">
+                    <div class="section-number">01</div>
+                    <h2>QUANTUM SENSORS</h2>
+                    <p class="section-description">
+                        Revolutionary quantum tunneling sensors provide unprecedented sensitivity and precision.
+                        Unlike traditional prosthetics, quantum sensors detect neural signals at the sub-atomic level,
+                        enabling natural, intuitive movement control.
+                        These sensors can detect magnetic fields as small as femto-tesla (10⁻¹⁵ T) –
+                        orders of magnitude more sensitive than Earth's magnetic field.
+                    </p>
+                </div>
+
+                <div class="tech-details">
+                    <div class="tech-card">
+                        <div class="tech-icon">⚛️</div>
+                        <h3>Quantum Tunneling</h3>
+                        <p>Sub-atomic signal detection for microsecond response times</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">📡</div>
+                        <h3>Neural Interface</h3>
+                        <p>Direct brain-to-arm communication via quantum entanglement</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🎯</div>
+                        <h3>Precision Control</h3>
+                        <p>99.7% accuracy in reproducing intended movements</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-visual">
+                <div class="sensor-animation">
+                    <div class="sensor-ring"></div>
+                    <div class="sensor-core"></div>
+                    <div class="sensor-particles"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= NEURAL INTERFACE SECTION ======================= -->
+    <section class="tech-section" id="neural-interface">
+        <div class="section-container">
+            <div class="section-visual">
+                <div class="neural-animation">
+                    <div class="neural-net"></div>
+                    <div class="neural-nodes"></div>
+                </div>
+            </div>
+
+            <div class="section-content">
+                <div class="section-header">
+                    <div class="section-number">02</div>
+                    <h2>NEURAL INTERFACE</h2>
+                    <p class="section-description">
+                        Our proprietary neural bridge connects directly to the peripheral nervous system.
+                        Quantum entanglement allows for real-time feedback, giving users
+                        tactile sensation and proprioceptive awareness.
+                    </p>
+                </div>
+
+                <div class="tech-details">
+                    <div class="tech-card">
+                        <div class="tech-icon">🧠</div>
+                        <h3>Brain-Machine Interface</h3>
+                        <p>Non-invasive neural reading with surgical precision</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">⚡</div>
+                        <h3>Real-Time Feedback</h3>
+                        <p>< 5ms latency from thought to movement</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🤚</div>
+                        <h3>Tactile Response</h3>
+                        <p>Pressure and temperature feedback via quantum sensors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= MATERIAL SCIENCE SECTION ======================= -->
+    <section class="tech-section" id="material-science">
+        <div class="section-container">
+            <div class="section-content">
+                <div class="section-header">
+                    <div class="section-number">03</div>
+                    <h2>MATERIAL SCIENCE</h2>
+                    <p class="section-description">
+                        Advanced aerospace materials ensure durability while maintaining
+                        natural weight and aesthetics. Carbon fiber composites and
+                        titanium alloys create the perfect balance of strength and comfort.
+                    </p>
+                </div>
+
+                <div class="tech-details">
+                    <div class="tech-card">
+                        <div class="tech-icon">🔬</div>
+                        <h3>Carbon Fiber</h3>
+                        <p>Aerospace-grade composites for maximum strength-to-weight ratio</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">⚙️</div>
+                        <h3>Titanium Alloy</h3>
+                        <p>Medical-grade titanium for biocompatibility and durability</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">💎</div>
+                        <h3>Graphene Coating</h3>
+                        <p>Antimicrobial surface with self-cleaning properties</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-visual">
+                <div class="material-animation">
+                    <div class="material-layer"></div>
+                    <div class="material-layer"></div>
+                    <div class="material-layer"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= PROJECT STATUS SECTION ======================= -->
+    <section class="status-section" id="project-status">
+        <div class="status-container">
+            <div class="status-badge">PLANNING PHASE</div>
+            <h2>PROJECT STATUS</h2>
+            <p class="status-description">
+                This project is currently in the research and planning phase.
+                We're exploring quantum sensor applications in prosthetic devices
+                and developing prototypes for clinical testing.
+            </p>
+
+            <div class="timeline">
+                <div class="timeline-item completed">
+                    <div class="timeline-marker">✓</div>
+                    <div class="timeline-content">
+                        <h3>Concept Development</h3>
+                        <p>Initial research and theoretical framework</p>
+                    </div>
+                </div>
+                <div class="timeline-item current">
+                    <div class="timeline-marker">→</div>
+                    <div class="timeline-content">
+                        <h3>Prototyping Phase</h3>
+                        <p>Building and testing initial sensor arrays</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Clinical Trials</h3>
+                        <p>Human testing and feedback collection</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Production</h3>
+                        <p>Manufacturing and market release</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= CTA SECTION ======================= -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>TURN THIS VISION INTO REALITY?</h2>
+            <p>Looking to help transform this concept into an actual product? Let's connect.</p>
+            <div class="cta-buttons">
+                <a href="mailto:con.eichhorn@tum.de" class="cta-btn primary">Get in Touch</a>
+                <a href="index.html#contact-section" class="cta-btn secondary">Portfolio Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="quantum-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                QUANTUM<span class="logo-accent">.</span>PROSTHESIS
+            </div>
+            <p class="footer-text">© 2026 Constantin Eichhorn | Research Project</p>
+            <div class="footer-links">
+                <a href="index.html">← Back to Portfolio</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bionic-arm.js"></script>
+</body>
+</html>
