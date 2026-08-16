@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 – Seite nicht gefunden | con.eichhorn</title>
+    <link rel="icon" type="image/png" href="bilder/icons/icon2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0F172A;
+            --bg2: #1E293B;
+            --surface: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.08);
+            --accent: #6366F1;
+            --accent2: #818CF8;
+            --text: #F8FAFC;
+            --muted: #94A3B8;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .brand-logo {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+            z-index: 10;
+        }
+
+        .brand-dot {
+            color: var(--accent);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .error-code {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(6rem, 20vw, 12rem);
+            font-weight: 700;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--text) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .error-code::after {
+            content: '404';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--text) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .error-code::after {
+                animation: glitch 6s infinite;
+            }
+        }
+
+        @keyframes glitch {
+            0%, 90%, 100% {
+                transform: translate(0);
+                opacity: 1;
+            }
+            91% {
+                transform: translate(-2px, 1px);
+                opacity: 0.8;
+            }
+            92% {
+                transform: translate(2px, -1px);
+                opacity: 0.9;
+            }
+            93% {
+                transform: translate(-1px, 2px);
+                opacity: 0.7;
+            }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .error-message {
+            color: var(--muted);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 48px;
+        }
+
+        .terminal {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 500px;
+            margin-bottom: 48px;
+            text-align: left;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border);
+        }
+
+        .terminal-dot.red { background: #EF4444; }
+        .terminal-dot.yellow { background: #F59E0B; }
+        .terminal-dot.green { background: #10B981; }
+
+        .terminal-line {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .terminal-prompt {
+            color: var(--accent);
+            white-space: pre;
+        }
+
+        .terminal-content {
+            color: var(--muted);
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background: var(--accent);
+            animation: blink 1s step-end infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .terminal-cursor {
+                animation: none;
+            }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .button-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--text);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent2);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--accent);
+            background: var(--surface);
+        }
+
+        @media (max-width: 640px) {
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="brand-logo">
+        con<span class="brand-dot">.</span>eichhorn
+    </a>
+
+    <main>
+        <div class="error-code">404</div>
+        <h1>Seite nicht gefunden</h1>
+        <p class="error-message">
+            Die von dir gesuchte Seite existiert nicht oder wurde verschoben.
+            Kein Problem – wir finden zurück zur Startseite.
+        </p>
+
+        <div class="terminal">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-prompt">$</span>
+                <span class="terminal-content">cd ~/projects/portfolio</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-prompt">$</span>
+                <span class="terminal-content">git status</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-prompt">$</span>
+                <span class="terminal-content">error: page not found in working tree</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-prompt">$</span>
+                <span class="terminal-content">cd .. && go home<span class="terminal-cursor"></span></span>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <a href="/" class="btn btn-primary">Zur Startseite →</a>
+            <a href="/#contact-section" class="btn btn-ghost">Kontakt</a>
+        </div>
+    </main>
+</body>
+</html>

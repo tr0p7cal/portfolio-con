@@ -4,157 +4,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <title>Constantin Eichhorn</title>
-    <link rel="icon" type="image/png" href="bilder/icon2.png">
+    <title>con.eichhorn – Portfolio</title>
+    <link rel="icon" type="image/png" href="bilder/icons/icon2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
-
 </head>
 <body>
 
-    <!-- ======================= HEADER ======================= -->
-    <header id="main-header">
-        <div class="container" id="header-content">
-            <div id="logo-container">
-                <img id="logo-img" src="bilder/icon2.png" alt="Logo">
-                <h1 id="site-title">
-                    <span class="full-name">Constantin Eichhorn</span>
-                    <span class="short-name">C. Eichhorn</span>
-                </h1>
+    <!-- ======================= NAVIGATION ======================= -->
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                con<span class="nav-dot">.</span>eichhorn
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero" class="lang" key="nav_home">Home</a></li>
+                <li><a href="#projects-section" class="lang" key="nav_projects">Projekte</a></li>
+                <li><a href="#cv-section" class="lang" key="nav_cv">Lebenslauf</a></li>
+                <li><a href="#contact-section" class="lang" key="nav_contact">Kontakt</a></li>
+            </ul>
+            <div class="nav-lang">
+                <button class="lang-btn btn-de" aria-label="Deutsch" title="Deutsch">
+                    <img class="lang-flag" src="bilder/flags/flag-de.svg" alt="">
+                </button>
+                <button class="lang-btn btn-en" aria-label="English" title="English">
+                    <img class="lang-flag" src="bilder/flags/flag-en.svg" alt="">
+                </button>
             </div>
-            <nav id="main-nav">
-                <ul>
-                    <li><a class="lang" key="nav_home" href="#hero">Home</a></li>
-                    <li><a class="lang" key="nav_projects" href="#projects-section">Projekte</a></li>
-                    <li><a class="lang" key="nav_cv" href="#cv-section">Lebenslauf</a></li>
-                    <li><a class="lang" key="nav_contact" href="#contact-section">Kontakt</a></li>
-
-            <!-- LANGUAGE BUTTONS Desktop ADDED HERE -->
-                    <li class="desktop-lang-switch" style="display: flex; align-items: center;">
-                        <button class="lang-btn btn-de" aria-label="Deutsch" title="Deutsch" aria-pressed="false"><img class="lang-flag" src="bilder/flag-de.svg" alt="" aria-hidden="true"></button>
-                        <button class="lang-btn btn-en" aria-label="English" title="English" aria-pressed="false"><img class="lang-flag" src="bilder/flag-en.svg" alt="" aria-hidden="true"></button>
-                    </li>
-                </ul>
-            </nav>
-
-            <!-- NEU: MOBILE BUTTONS CONTAINER (Nur sichtbar auf Mobile) -->
-        <div class="mobile-lang-switch">
-            <button class="lang-btn btn-de" aria-label="Deutsch" title="Deutsch" aria-pressed="false"><img class="lang-flag" src="bilder/flag-de.svg" alt="" aria-hidden="true"></button>
-            <button class="lang-btn btn-en" aria-label="English" title="English" aria-pressed="false"><img class="lang-flag" src="bilder/flag-en.svg" alt="" aria-hidden="true"></button>
-        </div>
-            
-            <button id="hamburger-menu">
+            <button class="hamburger" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
-    </header>
+    </nav>
 
     <!-- ======================= MAIN CONTENT ======================= -->
     <main>
 
         <!-- --- HERO SECTION --- -->
-    <section id="hero">
-         <div class="hero-buttons-container">
-            <!-- Combined classes: "hero-button lang" -->
-            <a href="#projects-section" class="hero-button lang" key="hero_btn_projects">Projekte</a>
-            <a href="#cv-section" class="hero-button lang" key="hero_btn_cv">Lebenslauf</a>
-            <a href="#contact-section" class="hero-button lang" key="hero_btn_contact">Kontakt</a>
-        </div>
-    </section>
+        <section id="hero">
+            <div class="grid-bg"></div>
+            <div class="container hero-content">
+                <h1 class="hero-title">Constantin Eichhorn</h1>
+                <div class="hero-buttons">
+                    <a href="#projects-section" class="btn btn-primary">Projekte →</a>
+                    <a href="#contact-section" class="btn btn-ghost">Kontakt</a>
+                </div>
+            </div>
+        </section>
 
-
-
-        <!-- ============= PROJEKTE SECTION ============= -->
+        <!-- --- PROJECTS SECTION --- -->
         <section id="projects-section">
             <div class="container">
-                <h2 class="lang" key="projects_title" id="projects-title">Meine Projekte</h2>
+                <h2 class="section-title lang" key="projects_title">Projekte</h2>
+                <div class="projects-grid">
 
-                <div id="github-projects-grid" class="projects-grid">
-    
-            <!-- Project 1 -->
-            <div class="project-card">
-                <img class="project-image" src="bilder/tttproject1.png" alt="Projektbild">
-                <div class="project-content">
-                    <!-- Combined classes here -->
-                    <h4 class="project-title lang" key="proj_ttt_title">Tic Tac Toe</h4>
-                    <p class="project-description lang" key="proj_ttt_desc">
-                        In diesem Projekt habe ich zum ersten mal mit Python und Pygame programmiert. 
-                    </p>
-                    <a href="https://github.com/tr0p7cal/TicTacToe.git" class="project-link lang" key="btn_github" target="_blank">Zum GitHub Repo</a>
-                    <p class="project-skill">🐍Python | 📖Pygame</p>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img class="project-image" src="bilder/personalSiteproj1.png" alt="Projektbild">
-                <div class="project-content">
-                    <!-- Combined classes here -->
-                    <h4 class="project-title lang" key="proj_web_title">Personal Website</h4>
-                    <p class="project-description lang" key="proj_web_desc">
-                        Hier findet man den Code für diese Website. Mit diesem Projekt habe ich meine HTML und CSS kenntnisse wieder aufgefrischt.
-                    </p>
-                    <a href="#" class="project-link lang" key="btn_github" target="_blank">Zum GitHub Repo</a>
-                    <p class="project-skill">🟡HTML & CSS | 📱Responsive Design | 🐙Github</p>
-                </div>
-            </div>
-        </div>
-
-                <!-- Other Projects (Complex Description) -->
-                <div id="other-projects-grid" class="projects-grid">
-                     <div class="project-card">
-                        <div class="project-content">
-                            <h4 class="project-title lang" key="proj_current_title">Aktuelle Projekte</h4>
-                            
-                                     <p id="other-project-description" class="project-description">
-                                         <span class="lang" key="proj_stock_title">Python Stock Alert System:</span> <br>
-                                         <span class="lang" key="proj_stock_desc">Entwicklung einer automatisierten Data-Mining-Pipeline für Finanzdaten. Ein eigens geschriebener Python-Algorithmus überwacht Aktienkurse via Web Scraping in Echtzeit. Sobald ein definierter Zielwert erreicht wird, löst das Backend automatisch eine Benachrichtigung via SMTP (E-Mail) aus.</span>
-                                         <p class="project-skill">
-                                             <span class="skill-item">🐍&nbsp;Python</span>
-                                             <span class="skill-item">🕷️&nbsp;Webscraping</span>
-                                             <span class="skill-item">📬&nbsp;SMTP</span>
-                                             <span class="skill-item">🤖&nbsp;Automation</span>
-                                         </p>
-                                          <br><br>
-                                           <span class="lang" key="proj_nas_title">NAS Home Server</span>:<br>
-                                           <span class="lang" key="proj_nas_desc"></span>
-                                           <p class="project-skill">
-                                               <span class="skill-item">🛠️&nbsp;Hardware</span>
-                                               <span class="skill-item">💾&nbsp;Storage</span>
-                                               <span class="skill-item">🛡️&nbsp;Security</span>
-                                           </p>
-                                     </p>
-                            <span class="coming-soon lang" key="btn_coming_soon">Coming Soon</span>
+                    <!-- Project 1: Tic Tac Toe -->
+                    <div class="card">
+                        <span class="card-status status-live">Live</span>
+                        <h3 class="lang" key="proj_ttt_title">Tic Tac Toe</h3>
+                        <p class="lang" key="proj_ttt_desc">
+                            Erstes Python-Projekt mit Pygame. Klassisches Spiel mit vollständiger Spiellogik.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pygame</span>
                         </div>
+                        <a href="https://github.com/tr0p7cal/TicTacToe.git" class="card-link lang" key="btn_github" target="_blank">
+                            GitHub Repo →
+                        </a>
                     </div>
-                 </div>
+
+                    <!-- Project 2: Personal Website -->
+                    <div class="card">
+                        <span class="card-status status-live">Live</span>
+                        <h3 class="lang" key="proj_web_title">Personal Website</h3>
+                        <p class="lang" key="proj_web_desc">
+                            Diese Website. HTML & CSS Refresher mit responsive Design.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                        <a href="#" class="card-link lang" key="btn_github" target="_blank">
+                            GitHub Repo →
+                        </a>
+                    </div>
+
+                    <!-- Project 3: Stock Alert System -->
+                    <div class="card">
+                        <span class="card-status status-wip">In Arbeit</span>
+                        <h3 class="lang" key="proj_stock_title">Stock Alert System</h3>
+                        <p class="lang" key="proj_stock_desc">
+                            Automatisierte Data-Mining-Pipeline für Finanzdaten. Echtzeit-Überwachung mit E-Mail-Benachrichtigung.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Web Scraping</span>
+                            <span class="tag">SMTP</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                        <span class="card-link disabled">Coming Soon</span>
+                    </div>
+
+                    <!-- Project 4: NAS Home Server -->
+                    <div class="card">
+                        <span class="card-status status-wip">In Arbeit</span>
+                        <h3 class="lang" key="proj_nas_title">NAS Home Server</h3>
+                        <p class="lang" key="proj_nas_desc">
+                            Eigener Home-Server mit Storage-Lösung und Security-Hardening.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Hardware</span>
+                            <span class="tag">Storage</span>
+                            <span class="tag">Security</span>
+                        </div>
+                        <span class="card-link disabled">Coming Soon</span>
+                    </div>
+
+                </div>
             </div>
         </section>
 
         <!-- --- CV SECTION --- -->
         <section id="cv-section">
             <div class="container">
-                <h2 id="cv-title"><span>CV</span> <span>Constantin Eichhorn</span></h2>
-                <p id="cv-teaser" class="lang" key="cv_teaser">Meinen Lebenslauf kannst du hier herunterladen - verfügbar auf Deutsch und Englisch.</p>
-                <div class="hero-buttons-container cv-cta-container">
-                    <!-- Combined classes: "hero-button lang" -->
-                    <a href="cv.html" class="hero-button lang" key="cv_btn">Zum Lebenslauf</a>
+                <h2 class="section-title lang" key="cv_title">Lebenslauf</h2>
+                <p class="cv-teaser lang" key="cv_teaser">
+                    Meinen Lebenslauf kannst du hier herunterladen – verfügbar auf Deutsch und Englisch.
+                </p>
+                <div class="cv-buttons">
+                    <a href="cv.html" class="btn btn-primary lang" key="cv_btn">
+                        Zum Lebenslauf →
+                    </a>
                 </div>
             </div>
-        </section>           
+        </section>
 
-        <!-- === Kontakt === -->
+        <!-- --- CONTACT SECTION --- -->
         <section id="contact-section">
             <div class="container">
-                <h2 class="contact-title lang" key="contact_title">Kontakt</h2>
-                <p id="contact-email">
-                    E-Mail: <a href="mailto:con.eichhorn@tum.de">con.eichhorn@tum.de</a>
-                </p>
-                <div class="contact-links-container">
-                    <a href="https://www.linkedin.com/in/coneichhorn/" class="contact-link" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/tr0p7cal" class="contact-link" target="_blank">GitHub</a>
+                <div class="contact-grid">
+                    <div class="contact-text">
+                        <h2 class="section-title lang" key="contact_title">Kontakt</h2>
+                        <p class="lang" key="contact_intro">
+                            Du hast eine Frage oder möchtest zusammenarbeiten? Schreib mir einfach.
+                        </p>
+                    </div>
+                    <div class="contact-links">
+                        <a href="mailto:con.eichhorn@tum.de" class="contact-link">
+                            <span class="contact-icon">✉</span>
+                            con.eichhorn@tum.de
+                        </a>
+                        <a href="https://www.linkedin.com/in/coneichhorn/" class="contact-link" target="_blank">
+                            <span class="contact-icon">in</span>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/tr0p7cal" class="contact-link" target="_blank">
+                            <span class="contact-icon">GH</span>
+                            GitHub
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -162,12 +174,12 @@
     </main>
 
     <!-- ======================= FOOTER ======================= -->
-    <footer id="main-footer">
+    <footer>
         <div class="container">
-            <p class="lang" key="footer_text" id="footer-text">&copy; 2026 Constantin Eichhorn. Alle Rechte vorbehalten.</p>
+            <p class="lang" key="footer_text">&copy; 2026 Constantin Eichhorn. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-</body> 
+</body>
 </html>
