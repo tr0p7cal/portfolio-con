@@ -48,6 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Projects
             projects_title: "Projekte",
+            status_live: "Live",
+            status_wip: "In Arbeit",
+            status_soon: "Planung",
             proj_ttt_title: "Tic Tac Toe",
             proj_ttt_desc: "Erstes Python-Projekt mit Pygame. Klassisches Spiel mit vollständiger Spiellogik.",
             proj_web_title: "Personal Website",
@@ -87,6 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Projects
             projects_title: "Projects",
+            status_live: "Live",
+            status_wip: "In Progress",
+            status_soon: "Planning",
             proj_ttt_title: "Tic Tac Toe",
             proj_ttt_desc: "First Python project with Pygame. Classic game with complete game logic.",
             proj_web_title: "Personal Website",
