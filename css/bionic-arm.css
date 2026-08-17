@@ -905,22 +905,9 @@ p {
         max-width: 300px;
     }
 
-    /* Mobile: Always show prosthesis, no hover needed */
-    .arm-normal {
-        opacity: 0.2 !important;
-    }
-
-    .arm-prosthesis {
-        opacity: 1 !important;
-        filter: blur(0) !important;
-    }
-
-    .magnifier-hint {
+    /* Mobile: Hide arm display completely */
+    .arm-display {
         display: none !important;
-    }
-
-    .arm-container {
-        cursor: default !important;
     }
 
     .section-container {
