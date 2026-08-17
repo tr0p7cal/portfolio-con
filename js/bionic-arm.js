@@ -3,8 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // ======================= ARM HOVER INTERACTION =======================
     const armContainer = document.querySelector('.arm-container');
     const armDisplay = document.querySelector('#arm-display');
+    const isMobile = window.innerWidth <= 768;
 
-    if (armContainer && armDisplay) {
+    if (armContainer && armDisplay && !isMobile) {
         // Mouse move parallax effect
         armContainer.addEventListener('mousemove', function(e) {
             const rect = armContainer.getBoundingClientRect();

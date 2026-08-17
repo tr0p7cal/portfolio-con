@@ -905,6 +905,24 @@ p {
         max-width: 300px;
     }
 
+    /* Mobile: Always show prosthesis, no hover needed */
+    .arm-normal {
+        opacity: 0.2 !important;
+    }
+
+    .arm-prosthesis {
+        opacity: 1 !important;
+        filter: blur(0) !important;
+    }
+
+    .magnifier-hint {
+        display: none !important;
+    }
+
+    .arm-container {
+        cursor: default !important;
+    }
+
     .section-container {
         padding: 0 20px;
         gap: 40px;
